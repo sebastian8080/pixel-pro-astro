@@ -1,0 +1,29 @@
+---
+// src/components/services/ServiceCard.astro
+import type { Service } from '../../data/services';
+
+interface Props {
+    service: Service;
+    isDarkBackground?: boolean; // Nueva prop para indicar si el fondo es oscuro
+}
+
+const { service, isDarkBackground = false } = Astro.props;
+
+// Ajustamos los colores del fondo y texto de la tarjeta según el fondo principal
+const cardBgClass = isDarkBackground ? 'bg-gray-800' : 'bg-white'; // Cambiado a gray-800 para que coincida con la imagen de servicios
+const titleColorClass = isDarkBackground ? 'text-white' : 'text-purple-700';
+const descriptionColorClass = isDarkBackground ? 'text-gray-300' : 'text-gray-800'; // Ajustado a gray-300 para mejor contraste
+const iconColorClass = isDarkBackground ? 'text-blue-400' : 'text-blue-600';
+// Si tuvieras lista de detalles, también ajustaría su color
+// const listTextColorClass = isDarkBackground ? 'text-blue-200' : 'text-gray-700';
+
+// La clase de borde sigue siendo útil para la diferenciación visual
+const borderColorClass = service.borderColor || 'border-blue-700'; // Fallback a un azul si no hay borde definido
+---
+<div class={`relative p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 border-t-4 ${borderColorClass} ${cardBgClass} flex flex-col items-center text-center h-full`}>
+    <div class="mb-4">
+        {service.iconClass && <i class={`${service.iconClass} text-5xl ${iconColorClass}`}></i>}
+    </div>
+    <h3 class={`text-2xl font-semibold mb-3 ${titleColorClass}`}>{service.title}</h3>
+    <p class={`text-base ${descriptionColorClass} flex-grow`}>{service.description}</p>
+</div>

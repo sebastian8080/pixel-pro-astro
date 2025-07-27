@@ -1,0 +1,20 @@
+---
+// src/pages/contacto.astro
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/contact/ContactForm.astro';
+import ContactInfo from '../components/contact/ContactInfo.astro';
+---
+
+<Layout title="Contacta a la mejor agencia de marketing digital">
+    <div class="container mx-auto mt-28 md:mt-32">
+        <h1 class="text-3xl md:text-5xl font-bold text-blue-700 mb-8 text-center">Contacta a la mejor agencia de marketing</h1>
+        <p class="text-xl text-gray-700 text-center mb-12 max-w-3xl mx-auto">
+            ¿Listo para llevar tu negocio al siguiente nivel? Rellena el formulario o contáctanos directamente.
+        </p>
+    
+        <div class="grid md:grid-cols-2 gap-12">
+            <ContactInfo />
+            <ContactForm />
+        </div>
+    </div>
+</Layout>

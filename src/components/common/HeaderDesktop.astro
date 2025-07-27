@@ -1,0 +1,21 @@
+---
+// src/components/common/HeaderDesktop.astro
+---
+<header class="bg-white shadow-md py-5 hidden md:block z-50 fixed w-full">
+    <div class="container mx-auto flex justify-between items-center">
+        <a href="/" class="flex items-center text-2xl font-bold text-blue-700 hover:text-blue-900 transition-colors">
+            <svg class="w-8 h-8 mr-2 text-purple-600" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-2h2v2zm0-4H9V7h2v6zm5 0h-2V7h2v6z"/></svg>
+            PIXEL PRO
+        </a>
+        <nav>
+            <ul class="flex items-center space-x-8">
+                <li><a href="/" class="text-gray-700 hover:text-blue-700 font-semibold text-lg transition-colors">Inicio</a></li>
+                <li><a href="/servicios" class="text-gray-700 hover:text-blue-700 font-semibold text-lg transition-colors">Servicios</a></li>
+                <li><a href="/nosotros" class="text-gray-700 hover:text-blue-700 font-semibold text-lg transition-colors">Nosotros</a></li>
+                <li><a href="/blog" class="text-gray-700 hover:text-blue-700 font-semibold text-lg transition-colors">Blog</a></li>
+                <li><a href="/contacto" class="text-gray-700 hover:text-blue-700 font-semibold text-lg transition-colors">Contacto</a></li>
+                <li><a href="/contacto" class="bg-blue-600 text-white py-2.5 px-6 rounded-full hover:bg-blue-700 transition duration-300 transform hover:scale-105 shadow-md">Solicitar Presupuesto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>

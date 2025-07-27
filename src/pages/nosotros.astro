@@ -1,0 +1,20 @@
+---
+// src/pages/nosotros.astro
+import AboutUsSection from '../components/about/AboutUsSection.astro';
+import TeamSection from '../components/about/TeamSection.astro';
+import ContactForm from '../components/contact/ContactForm.astro';
+import ContactInfo from '../components/contact/ContactInfo.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Conoce más sobre nuestra empresa | Pixel Pro">
+    <AboutUsSection
+        imageUrl="/assets/img/about-us-header-image.png"
+        imageAlt="Ilustración de equipo trabajando"
+    />
+    <TeamSection />
+    <div class="grid md:grid-cols-2 gap-12 container mx-auto mt-14">
+        <ContactInfo />
+        <ContactForm />
+    </div>
+</Layout>

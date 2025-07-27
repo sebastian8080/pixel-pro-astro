@@ -1,0 +1,72 @@
+---
+// src/components/common/Footer.astro
+---
+<footer class="bg-white pt-10 mt-8 shadow-inner">
+    <div class="px-4 md:px-8 py-4 border-b border-gray-200 flex flex-col sm:flex-row justify-between items-center text-gray-700">
+        <p class="mb-4 sm:mb-0 text-lg">Mantente conectado con nuestras redes sociales.</p>
+        <div class="flex space-x-6">
+            <a href="https://facebook.com/tupixelpro" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-700 transition-colors text-xl">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://x.com/tupixelpro" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-700 transition-colors text-xl">
+                <i class="fab fa-x-twitter"></i> {/* Icono de X (Twitter) */}
+            </a>
+            <a href="mailto:marketing@wearepixel.pro" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-700 transition-colors text-xl">
+                <i class="fab fa-google"></i> {/* Opcional: Podría ser YouTube, o Google My Business si tienes un enlace directo */}
+            </a>
+            <a href="https://instagram.com/tupixelpro" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-700 transition-colors text-xl">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://linkedin.com/company/tupixelpro" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-700 transition-colors text-xl">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="px-4 md:px-8 py-10 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
+        <div class="flex flex-col items-center md:items-start text-center md:text-left">
+            <a href="/" class="flex items-center mb-4">
+                <svg class="w-8 h-8 mr-2 text-blue-700" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-2h2v2zm0-4H9V7h2v6zm5 0h-2V7h2v6z"/></svg>
+                <span class="text-2xl font-bold text-gray-800">PIXEL PRO</span>
+            </a>
+            <p class="text-gray-600 leading-relaxed text-sm max-w-xs">
+                Aumenta tu presencia online y genera mejores resultados
+            </p>
+        </div>
+
+        <div class="text-center md:text-left">
+            <h3 class="font-bold text-gray-800 text-lg mb-4 uppercase">Servicios</h3>
+            <ul class="space-y-2">
+                <li><a href="/servicios/google-ads" class="text-gray-600 hover:text-blue-700 transition-colors">Google ADS</a></li>
+                <li><a href="/servicios/redes-sociales" class="text-gray-600 hover:text-blue-700 transition-colors">Redes Sociales</a></li>
+                <li><a href="/servicios/posicionamiento-web" class="text-gray-600 hover:text-blue-700 transition-colors">Posicionamiento Web</a></li>
+                <li><a href="/servicios/diseno-web" class="text-gray-600 hover:text-blue-700 transition-colors">Diseño Web</a></li>
+            </ul>
+        </div>
+
+        <div class="text-center md:text-left">
+            <h3 class="font-bold text-gray-800 text-lg mb-4 uppercase">Información</h3>
+            <ul class="space-y-2">
+                <li><a href="/soporte" class="text-gray-600 hover:text-blue-700 transition-colors">Soporte</a></li>
+            </ul>
+        </div>
+
+        <div class="text-center md:text-left">
+            <h3 class="font-bold text-gray-800 text-lg mb-4 uppercase">Contacto</h3>
+            <ul class="space-y-2">
+                <li class="flex items-center justify-center md:justify-start">
+                    <i class="fas fa-envelope text-blue-600 mr-2"></i>
+                    <a href="mailto:marketing@wearepixel.pro" class="text-gray-600 hover:text-blue-700 transition-colors">marketing@wearepixel.pro</a>
+                </li>
+                <li class="flex items-center justify-center md:justify-start">
+                    <i class="fas fa-phone-alt text-blue-600 mr-2"></i>
+                    <a href="tel:+593964085651" class="text-gray-600 hover:text-blue-700 transition-colors">096-408-5651</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="bg-gray-100 py-6 text-center text-gray-600 text-sm mt-8">
+        <p>&copy; 2025 Copyright | Pixel Pro</p>
+    </div>
+</footer>
