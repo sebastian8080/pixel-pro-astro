@@ -9,9 +9,14 @@ import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
+const pageDescription = "Agencia líder en marketing digital y diseño web. Ofrecemos servicios de SEO, Google Ads, diseño de páginas web y más para potenciar tu negocio.";
 ---
 
-<Layout title="Agencia de Marketing Digital | We  Are Pixel Pro">
+<Layout 
+    title="Agencia de Marketing Digital | We  Are Pixel Pro"
+    description={pageDescription}
+>
 	<Hero />
     <FeaturedServices />
     <AboutUsSection />
@@ -20,4 +25,5 @@ import Layout from '../layouts/Layout.astro';
         <ContactInfo />
         <ContactForm />
     </div>
+    
 </Layout>
