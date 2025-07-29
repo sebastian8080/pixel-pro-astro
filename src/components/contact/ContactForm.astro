@@ -3,7 +3,7 @@
 ---
 <div class="bg-white p-8 rounded-lg shadow-lg">
     <h2 class="text-3xl font-semibold text-purple-700 mb-6">Envíanos un Mensaje</h2>
-    <form action="#" method="POST" class="space-y-6">
+    <form id="contactForm" method="POST" class="space-y-6"> {/* Añade un ID al formulario */}
         <div>
             <label for="nombre" class="block text-gray-700 text-sm font-bold mb-2">Nombre:</label>
             <input type="text" id="nombre" name="nombre" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Tu Nombre" required>
@@ -34,8 +34,154 @@
             <label for="comentario" class="block text-gray-700 text-sm font-bold mb-2">Tu Mensaje:</label>
             <textarea id="comentario" name="comentario" rows="5" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Cuéntanos más sobre tu proyecto o consulta..."></textarea>
         </div>
-        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline transition duration-300 ease-in-out">
+
+        {/* Mensaje de estado del formulario */}
+        <p id="formStatusMessage" class="text-center font-bold" style="display: none;"></p>
+
+        <button type="submit" id="submitButton" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline transition duration-300 ease-in-out">
             Enviar Mensaje
         </button>
     </form>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Obtenemos los elementos y verificamos si existen
+        // Usamos 'as HTMLFormElement' etc. para TypeScript si lo estás usando
+        // Si no usas TypeScript, simplemente omite 'as HTML...'
+        const form = document.getElementById('contactForm');
+        const submitButton = document.getElementById('submitButton');
+        const statusMessageElement = document.getElementById('formStatusMessage');
+
+        // *** ESENCIAL: Verificar que los elementos existen ***
+        if (!form || !submitButton || !statusMessageElement) {
+            console.error('Error: Uno o más elementos del formulario no fueron encontrados en el DOM.');
+            return; // Detener la ejecución del script si los elementos no están presentes
+        }
+
+        // Obtener variables de entorno de Astro (disponibles en el cliente)
+        const API_URL = import.meta.env.PUBLIC_API_URL;
+        const API_SECRET_KEY = import.meta.env.PUBLIC_API_SECRET_KEY;
+        const LEAD_ENDPOINT = `${API_URL}/leads/send-lead`;
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault(); // Previene el envío de formulario por defecto (recargar página)
+
+            // 1. Resetear mensajes de estado y deshabilitar botón
+            statusMessageElement.textContent = '';
+            statusMessageElement.style.display = 'none';
+
+            // Aseguramos que submitButton es tratado como HTMLButtonElement
+            // (Si no usas TypeScript, puedes simplemente hacer 'submitButton.disabled = true;')
+            (submitButton as HTMLButtonElement).disabled = true;
+            submitButton.textContent = 'Enviando...';
+            submitButton.classList.remove('bg-blue-600', 'hover:bg-blue-700', 'bg-red-600', 'hover:bg-red-700', 'bg-green-600', 'hover:bg-green-700');
+            submitButton.classList.add('bg-gray-500');
+
+
+            // 2. Recopilar datos del formulario
+            // FormData espera un HTMLFormElement, que ya lo hemos verificado
+            const formData = new FormData(form as HTMLFormElement); // Casting para TypeScript
+            const data = {
+                name: formData.get('nombre'), // 'nombre' del campo input
+                apellido: formData.get('apellido'),
+                email: formData.get('email'),
+                telefono: formData.get('telefono'),
+                servicio: formData.get('servicio'),
+                message: formData.get('comentario') // 'comentario' del campo textarea
+            };
+
+            // ... (el resto de tu lógica de validación y fetch es igual) ...
+
+            // 3. Validación básica en el cliente
+            if (!data.name || !data.email || !data.message) {
+                displayStatus('Por favor, completa los campos obligatorios: Nombre, Email y Mensaje.', 'red');
+                resetFormState();
+                return;
+            }
+            if (!/\S+@\S+\.\S+/.test(data.email as string)) { // Casting para TypeScript si data.email puede ser null
+                displayStatus('Por favor, introduce un formato de email válido.', 'red');
+                resetFormState();
+                return;
+            }
+
+            // 4. Preparar el 'subject' para la API de Laravel
+            const apiData = {
+                name: data.name + (data.apellido ? ' ' + data.apellido : ''),
+                email: data.email,
+                message: `Teléfono: ${data.telefono || 'No proporcionado'}\nServicio de Interés: ${data.servicio || 'No seleccionado'}\n\n${data.message}`,
+                subject: `Nuevo Lead: ${data.servicio || 'Consulta General'} de ${data.name}`
+            };
+
+            try {
+                // 5. Enviar la petición a la API
+                const response = await fetch(LEAD_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'api-key': API_SECRET_KEY,
+                    },
+                    body: JSON.stringify(apiData),
+                });
+
+                const result = await response.json();
+
+                // 6. Manejar la respuesta
+                if (response.ok) {
+                    displayStatus(result.message || '¡Tu mensaje ha sido enviado con éxito! Gracias.', 'green');
+                    (form as HTMLFormElement).reset(); // Casting para TypeScript
+                } else {
+                    let errorMessage = result.message || 'Hubo un error al enviar tu mensaje. Inténtalo de nuevo.';
+                    if (result.errors) {
+                        Object.values(result.errors).forEach((errArray: any) => { // 'any' si los tipos son inciertos
+                            errorMessage += `\n- ${errArray.join(', ')}`;
+                        });
+                    }
+                    displayStatus(errorMessage, 'red');
+                    console.error('Error de API:', result);
+                }
+            } catch (error) {
+                // 7. Manejar errores de red o del servidor
+                displayStatus('No se pudo conectar con el servidor. Por favor, revisa tu conexión o inténtalo más tarde.', 'red');
+                console.error('Error de red/fetch:', error);
+            } finally {
+                // 8. Restaurar el estado del botón
+                resetFormState();
+            }
+        });
+
+        // Función auxiliar para mostrar mensajes de estado
+        function displayStatus(message: string, color: string) { // Añadir tipos si usas TypeScript
+            statusMessageElement.textContent = message;
+            statusMessageElement.style.color = color;
+            statusMessageElement.style.display = 'block';
+            if (color === 'green') {
+                submitButton.classList.remove('bg-gray-500', 'bg-red-600', 'hover:bg-red-700');
+                submitButton.classList.add('bg-green-600', 'hover:bg-green-700');
+            } else if (color === 'red') {
+                submitButton.classList.remove('bg-gray-500', 'bg-green-600', 'hover:bg-green-700');
+                submitButton.classList.add('bg-red-600', 'hover:bg-red-700');
+            } else { // Default to blue if no specific color (or reset to default)
+                submitButton.classList.remove('bg-gray-500', 'bg-red-600', 'hover:bg-red-700', 'bg-green-600', 'hover:bg-green-700');
+                submitButton.classList.add('bg-blue-600', 'hover:bg-blue-700');
+            }
+        }
+
+        // Función auxiliar para restaurar el estado del formulario (botón)
+        function resetFormState() {
+            (submitButton as HTMLButtonElement).disabled = false; // Casting para TypeScript
+            submitButton.textContent = 'Enviar Mensaje';
+            // Asegúrate de que el botón regrese al color azul si no hubo errores previos
+            if (statusMessageElement.style.color !== 'red' && statusMessageElement.style.color !== 'green') {
+                submitButton.classList.remove('bg-gray-500', 'bg-red-600', 'hover:bg-red-700', 'bg-green-600', 'hover:bg-green-700');
+                submitButton.classList.add('bg-blue-600', 'hover:bg-blue-700');
+            } else if (statusMessageElement.style.color === 'green') {
+                submitButton.classList.remove('bg-gray-500', 'bg-red-600', 'hover:bg-red-700');
+                submitButton.classList.add('bg-green-600', 'hover:bg-green-700');
+            } else if (statusMessageElement.style.color === 'red') {
+                submitButton.classList.remove('bg-gray-500', 'bg-green-600', 'hover:bg-green-700');
+                submitButton.classList.add('bg-red-600', 'hover:bg-red-700');
+            }
+        }
+    });
+</script>
