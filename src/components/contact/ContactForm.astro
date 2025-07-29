@@ -46,26 +46,22 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Obtenemos los elementos y verificamos si existen
-        // Usamos 'as HTMLFormElement' etc. para TypeScript si lo estás usando
-        // Si no usas TypeScript, simplemente omite 'as HTML...'
+
         const form = document.getElementById('contactForm');
         const submitButton = document.getElementById('submitButton');
         const statusMessageElement = document.getElementById('formStatusMessage');
 
-        // *** ESENCIAL: Verificar que los elementos existen ***
         if (!form || !submitButton || !statusMessageElement) {
             console.error('Error: Uno o más elementos del formulario no fueron encontrados en el DOM.');
-            return; // Detener la ejecución del script si los elementos no están presentes
+            return;
         }
 
-        // Obtener variables de entorno de Astro (disponibles en el cliente)
         const API_URL = import.meta.env.PUBLIC_API_URL;
         const API_SECRET_KEY = import.meta.env.PUBLIC_API_SECRET_KEY;
         const LEAD_ENDPOINT = `${API_URL}/leads/send-lead`;
 
         form.addEventListener('submit', async (event) => {
-            event.preventDefault(); // Previene el envío de formulario por defecto (recargar página)
+            event.preventDefault();
 
             // 1. Resetear mensajes de estado y deshabilitar botón
             statusMessageElement.textContent = '';
@@ -107,7 +103,8 @@
 
             // 4. Preparar el 'subject' para la API de Laravel
             const apiData = {
-                name: data.name + (data.apellido ? ' ' + data.apellido : ''),
+                name: data.name,
+                lastname: data.apellido,
                 email: data.email,
                 phone: data.telefono,
                 service: data.servicio,
