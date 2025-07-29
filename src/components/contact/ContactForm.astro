@@ -109,7 +109,9 @@
             const apiData = {
                 name: data.name + (data.apellido ? ' ' + data.apellido : ''),
                 email: data.email,
-                message: `Teléfono: ${data.telefono || 'No proporcionado'}\nServicio de Interés: ${data.servicio || 'No seleccionado'}\n\n${data.message}`,
+                phone: data.telefono,
+                service: data.servicio,
+                message: data.message,
                 subject: `Nuevo Lead: ${data.servicio || 'Consulta General'} de ${data.name}`
             };
 
