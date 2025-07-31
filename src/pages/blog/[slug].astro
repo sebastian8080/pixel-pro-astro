@@ -1,0 +1,51 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { slug } = Astro.params;
+const post = await getEntry('posts', slug);
+
+if (!post) {
+  return new Response('No encontrado', { status: 404 });
+}
+
+const { Content } = await post.render();
+---
+
+<Layout title={post.data.title}>
+  <article class="container mx-auto py-12 px-4 max-w-4xl mt-20">
+    <header class="mb-8">
+      <p class="text-lg text-gray-600 mb-6 bg-gray-200 py-1 px-3 shadow-md">
+        Publicado el {new Date(post.data.date).toLocaleDateString('es-ES', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        })} por {post.data.author}
+      </p>
+    </header>
+
+    <!-- Contenido con prose básico -->
+    <div class="prose prose-lg prose-gray max-w-none">
+      <Content />
+    </div>
+
+    <footer class="mt-12 pt-8 border-t border-gray-200">
+      <div class="flex flex-wrap gap-2">
+        <span class="text-gray-600 font-medium mr-2">Tags:</span>
+        {post.data.tags.map((tag) => (
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+            #{tag}
+          </span>
+        ))}
+      </div>
+    </footer>
+  </article>
+</Layout>
