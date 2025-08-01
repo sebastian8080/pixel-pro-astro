@@ -1,0 +1,184 @@
+---
+// FAQs.astro
+const faqs = [
+  {
+    question: "¿Dónde puedo encontrar una agencia de marketing digital cerca de mí?",
+    answer: "Hoy en día, gracias al Internet, puedes encontrar agencias de marketing digital desde cualquier lugar. Simplemente con digitar en Google 'agencia de marketing cerca de mi ubicación' podrás revisar las mejores opciones."
+  },
+  {
+    question: "¿Qué hace una agencia de marketing digital?",
+    answer: "Una agencia de marketing digital planifica, ejecuta y optimiza estrategias online para ayudar a tu negocio a aumentar su presencia en internet, atraer más clientes y mejorar sus ventas."
+  },
+  {
+    question: "¿Cuáles son los servicios de una empresa de marketing digital?",
+    answer: "Una compañia de marketing digital puede ofrecer auditorías, estrategias SEO, publicidad online, gestión de redes sociales, desarrollo web y campañas de contenido adaptadas a cada marca."
+  },
+  {
+    question: "¿Cómo elegir la mejor agencia de publicidad digital para mi negocio?",
+    answer: "Para elegir la mejor agencia de publicidad digital, revisa su experiencia, casos de éxito, servicios ofrecidos y la comunicación que tienen contigo desde el primer contacto."
+  },
+];
+---
+
+<section class="pt-16 pb-20 bg-gray-100 md:mt-28">
+  <div class="container mx-auto px-4">
+    <p class="text-gray-500 text-sm text-center">FAQS</p>
+    <h2 class="text-4xl font-semibold text-center text-gray-900 mb-2">Preguntas Frecuentes</h2>
+    <p class="text-center text-gray-600 mb-12 text-lg">¿Tienes preguntas? Estamos aquí para ayudarte.</p>
+    
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden transition-shadow duration-200 hover:shadow-md" key={index}>
+          <button class="faq-question w-full p-6 bg-transparent border-none cursor-pointer flex justify-between items-center text-left transition-colors duration-200 hover:bg-gray-50" data-faq={index}>
+            <h3 class="text-lg font-semibold text-gray-900 flex-1 pr-4 m-0">{faq.question}</h3>
+            <svg class="faq-icon flex-shrink-0 text-gray-500 transition-transform duration-300 ease-in-out" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out" data-answer={index}>
+            <div class="faq-content px-6 pb-6">
+              <h4 class="text-gray-600 text-base font-normal leading-relaxed m-0">{faq.answer}</h4>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-section {
+    padding: 4rem 0;
+    background-color: #fafafa;
+  }
+
+  .container {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .faq-title {
+    font-size: 2.25rem;
+    font-weight: 600;
+    text-align: center;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+  }
+
+  .faq-subtitle {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 3rem;
+    font-size: 1.125rem;
+  }
+
+  .faq-container {
+    space-y: 1rem;
+  }
+
+  .faq-item {
+    background: white;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+  }
+
+  .faq-item:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .faq-question {
+    width: 100%;
+    padding: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    transition: background-color 0.2s ease;
+  }
+
+  .faq-question:hover {
+    background-color: #f9fafb;
+  }
+
+  .faq-question h3 {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+    flex: 1;
+    padding-right: 1rem;
+  }
+
+  .faq-icon {
+    flex-shrink: 0;
+    color: #6b7280;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item.active .faq-icon {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 200px;
+    padding: 0 1.5rem 1.5rem;
+  }
+
+  .faq-content h4 {
+    margin: 0;
+    color: #6b7280;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 640px) {
+    .faq-title {
+      font-size: 1.875rem;
+    }
+    
+    .faq-question {
+      padding: 1.25rem;
+    }
+    
+    .faq-question h3 {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', function() {
+        const faqItem = this.parentElement;
+        const isActive = faqItem.classList.contains('active');
+        
+        // Cerrar todos los FAQs
+        document.querySelectorAll('.faq-item').forEach(item => {
+          item.classList.remove('active');
+        });
+        
+        // Abrir el FAQ clickeado si no estaba activo
+        if (!isActive) {
+          faqItem.classList.add('active');
+        }
+      });
+    });
+  });
+</script>
