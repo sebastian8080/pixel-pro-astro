@@ -1,0 +1,69 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Feature from '../../components/services/Feature.astro';
+
+const pageTitle = "Consultoría de Marketing Digital | Pixel Pro";
+const pageDescription = "Obtén una guía experta para tu estrategia de marketing digital. Analizamos tu negocio, identificamos oportunidades y te proporcionamos un plan de acción claro y medible.";
+const pageUrl = Astro.url.href;
+---
+
+<Layout
+    title={pageTitle}
+    description={pageDescription}
+    canonical={pageUrl}
+>
+    <section class="bg-blue-700 text-white py-16 md:py-24 mt-16 md:mt-18">
+        <div class="container mx-auto px-4 md:px-8 text-center max-w-4xl">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">Consultoría en Marketing Digital</h1>
+            <p class="text-lg md:text-xl opacity-90 leading-relaxed">
+                Si necesitas una dirección clara, te ofrecemos un plan de acción estratégico. Te guiamos para que tomes las mejores decisiones, optimices tus recursos y logres tus metas de negocio.
+            </p>
+        </div>
+    </section>
+
+    <main class="py-12 md:py-16">
+        <div class="container mx-auto px-4 md:px-8">
+            <section class="py-8">
+                <div class="max-w-3xl mx-auto text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">¿Cuándo necesitas una consultoría?</h2>
+                    <p class="text-xl text-gray-600">Cuando no ves resultados, no sabes por dónde empezar o necesitas optimizar tu inversión.</p>
+                </div>
+                <div class="prose prose-lg mx-auto text-gray-700">
+                    <p>A veces, la clave para el éxito no es hacer más, sino hacer las cosas correctas. Nuestra consultoría te proporciona un análisis objetivo de tu situación actual, identifica las brechas y te ofrece un camino claro para alcanzar tus objetivos de negocio. Nos convertimos en tu socio estratégico.</p>
+                </div>
+            </section>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
+                <Feature
+                    icon="fas fa-lightbulb"
+                    title="Diagnóstico de tu Estrategia"
+                    description="Analizamos tus esfuerzos de marketing actuales para identificar fortalezas, debilidades y áreas de oportunidad."
+                />
+                <Feature
+                    icon="fas fa-map-marked-alt"
+                    title="Plan de Acción Personalizado"
+                    description="Te entregamos un plan estratégico detallado y paso a paso, con objetivos claros, métricas de éxito y un cronograma."
+                />
+                <Feature
+                    icon="fas fa-chart-line"
+                    title="Optimización de Inversión"
+                    description="Te ayudamos a distribuir tu presupuesto de marketing de manera más eficiente para maximizar el retorno de tu inversión (ROI)."
+                />
+            </div>
+
+            <section class="py-8">
+                <div class="max-w-3xl mx-auto text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Cómo te ayudamos a crecer</h2>
+                    <p class="text-xl text-gray-600">Más que consejos, te ofrecemos soluciones concretas.</p>
+                </div>
+                <div class="prose prose-lg mx-auto text-gray-700">
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
+                        <li><strong>Definición de Objetivos:</strong> Te ayudamos a establecer metas SMART (Específicas, Medibles, Alcanzables, Relevantes, con Límite de Tiempo).</li>
+                        <li><strong>Análisis de Competencia:</strong> Identificamos qué está haciendo tu competencia y cómo puedes diferenciarte.</li>
+                        <li><strong>Capacitación y Soporte:</strong> Te empoderamos con el conocimiento necesario para que tú o tu equipo puedan implementar la estrategia.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+</Layout>

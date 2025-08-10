@@ -1,0 +1,83 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Feature from '../../components/services/Feature.astro';
+
+const pageTitle = "Gestión de Redes Sociales Profesional | Pixel Pro";
+const pageDescription = "Impulsa tu marca con nuestra gestión profesional de redes sociales. Creamos estrategias de contenido, aumentamos el engagement y conectamos con tu audiencia de manera efectiva.";
+const pageUrl = Astro.url.href;
+---
+
+<Layout
+    title={pageTitle}
+    description={pageDescription}
+    canonical={pageUrl}
+>
+    <section class="bg-blue-700 text-white py-16 md:py-24 mt-16 md:mt-18">
+        <div class="container mx-auto px-4 md:px-8 text-center max-w-4xl">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">Gestión de Redes Sociales</h1>
+            <p class="text-lg md:text-xl opacity-90 leading-relaxed">
+                Construimos una comunidad sólida en redes sociales, creando contenido que resuena con tu audiencia y convierte seguidores en clientes leales.
+            </p>
+        </div>
+    </section>
+
+        <div class="container mx-auto px-4 md:px-8 py-16 grid grid-cols-1 md:grid-cols-2">
+            <div class="flex items-center px-4 md:px-10">
+                <div>
+                    <div class="max-w-3xl mx-auto mb-8">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800">¿Por qué necesitas una gestión profesional de redes sociales?</h2>
+                        <p class="text-md text-gray-600 mt-6">Las redes sociales son más que simples publicaciones; son una herramienta estratégica para el crecimiento de tu negocio.</p>
+                    </div>
+                    <div class="prose prose-lg text-gray-700">
+                        <p>Una gestión efectiva no solo aumenta tu visibilidad, sino que también fortalece la confianza en tu marca. En Pixel Pro, nos encargamos de todo, desde la planificación hasta el análisis, para que tú te enfoques en lo que mejor sabes hacer: dirigir tu negocio.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-10 md:mt-0">
+                <img class="rounded-md shadow-md scale-100 md:scale-75" src="/assets/img/servicio-gestion-redes-sociales.webp" alt="">
+            </div>
+        </div>
+
+        <section class="bg-gray-200 py-16">
+            <div class="container mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 text-center">¿Qué incluye el servicio de redes sociales?</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
+                    <Feature
+                        icon="fas fa-bullhorn"
+                        title="Estrategia de Contenido"
+                        description="Desarrollamos un plan de contenido adaptado a tu marca y objetivos, asegurando que cada publicación tenga un propósito claro."
+                    />
+                    <Feature
+                        icon="fas fa-chart-line"
+                        title="Monitoreo y Análisis"
+                        description="Medimos el rendimiento de tus campañas, ajustamos la estrategia en tiempo real y te proporcionamos informes detallados de los resultados."
+                    />
+                    <Feature
+                        icon="fas fa-users"
+                        title="Interacción con la Comunidad"
+                        description="Interactuamos con tu audiencia de manera auténtica, gestionando comentarios y mensajes para construir relaciones duraderas."
+                    />
+                </div>
+            </div>
+        </section>
+
+        <div class="container mx-auto">
+            <section class="py-8">
+                <div class="max-w-3xl mx-auto text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nuestros pilares para tu éxito en redes sociales</h2>
+                    <p class="text-xl text-gray-600">Cubrimos todos los aspectos para asegurar tu crecimiento digital y el alcance de tu marca.</p>
+                </div>
+                <div class="prose prose-lg mx-auto text-gray-700">
+                    <h3>Creación de contenido atractivo:</h3>
+                    <h4 class="font-light">Desde gráficos impactantes hasta videos cortos que captan la atención</h4>
+
+                    <h3>Optimización de Perfiles:</h3>
+                    <h4 class="font-light">Configuramos y optimizamos tus perfiles para maximizar tu alcance orgánico</h4>
+
+                    <h3>Publicidad en redes sociales:</h3>
+                    <h4 class="font-light">Complementamos la gestión orgánica con campañas pagadas efectivas para llegar a más clientes potenciales</h4>
+                </div>
+            </section>
+        </div>
+
+</Layout>

@@ -1,0 +1,69 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Feature from '../../components/services/Feature.astro';
+
+const pageTitle = "Servicio de Diseño Gráfico | Pixel Pro";
+const pageDescription = "Creamos diseños gráficos impactantes que reflejan la esencia de tu marca. Logotipos, folletos, banners y todo lo que necesitas para destacar visualmente en el mercado.";
+const pageUrl = Astro.url.href;
+---
+
+<Layout
+    title={pageTitle}
+    description={pageDescription}
+    canonical={pageUrl}
+>
+    <section class="bg-blue-700 text-white py-16 md:py-24 mt-16 md:mt-18">
+        <div class="container mx-auto px-4 md:px-8 text-center max-w-4xl">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">Diseño Gráfico Profesional</h1>
+            <p class="text-lg md:text-xl opacity-90 leading-relaxed">
+                El diseño es la primera impresión que tienen tus clientes. Creamos elementos visuales que no solo son bonitos, sino que comunican tu mensaje y fortalecen tu marca.
+            </p>
+        </div>
+    </section>
+
+    <main class="py-12 md:py-16">
+        <div class="container mx-auto px-4 md:px-8">
+            <section class="py-8">
+                <div class="max-w-3xl mx-auto text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">¿Por qué la identidad visual es tan importante?</h2>
+                    <p class="text-xl text-gray-600">Un buen diseño gráfico genera confianza, profesionalismo y es el pilar de una comunicación efectiva.</p>
+                </div>
+                <div class="prose prose-lg mx-auto text-gray-700">
+                    <p>En un mundo saturado de información, un diseño visualmente atractivo y coherente te ayuda a diferenciarte de la competencia. En Pixel Pro, combinamos la creatividad con la estrategia para crear piezas gráficas que conecten emocionalmente con tu audiencia y potencien tus campañas de marketing.</p>
+                </div>
+            </section>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
+                <Feature
+                    icon="fas fa-palette"
+                    title="Creación de Logotipos"
+                    description="Diseñamos logotipos únicos y memorables que son la base de la identidad de tu marca."
+                />
+                <Feature
+                    icon="fas fa-edit"
+                    title="Material de Marketing"
+                    description="Creamos folletos, tarjetas de presentación, banners y otros elementos impresos y digitales para tu negocio."
+                />
+                <Feature
+                    icon="fas fa-bullhorn"
+                    title="Diseño para Redes Sociales"
+                    description="Generamos gráficos y plantillas optimizadas para tus perfiles y campañas en redes sociales, mejorando tu engagement."
+                />
+            </div>
+
+            <section class="py-8">
+                <div class="max-w-3xl mx-auto text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nuestra propuesta de valor en diseño</h2>
+                    <p class="text-xl text-gray-600">Un enfoque centrado en la coherencia visual y la efectividad comunicativa.</p>
+                </div>
+                <div class="prose prose-lg mx-auto text-gray-700">
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
+                        <li><strong>Diseño Centrado en la Marca:</strong> Cada pieza gráfica está alineada con los valores y la personalidad de tu empresa.</li>
+                        <li><strong>Creatividad Estratégica:</strong> No solo diseñamos, pensamos en cómo cada gráfico te ayudará a alcanzar tus objetivos de negocio.</li>
+                        <li><strong>Entregables de Calidad:</strong> Te entregamos archivos en formatos profesionales listos para su uso en cualquier medio.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+</Layout>

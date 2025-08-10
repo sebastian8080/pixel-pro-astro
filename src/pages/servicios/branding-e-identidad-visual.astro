@@ -1,0 +1,70 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Feature from '../../components/services/Feature.astro';
+
+const pageTitle = "Branding e Identidad Visual | Pixel Pro";
+const pageDescription = "Construimos una marca sólida y memorable. Creamos tu identidad visual completa, desde el logotipo hasta la guía de estilo, para que tu negocio deje una huella duradera.";
+const pageUrl = Astro.url.href;
+---
+
+<Layout
+    title={pageTitle}
+    description={pageDescription}
+    canonical={pageUrl}
+>
+    <section class="bg-blue-700 text-white py-16 md:py-24 mt-16 md:mt-18">
+        <div class="container mx-auto px-4 md:px-8 text-center max-w-4xl">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">Branding e Identidad Visual</h1>
+            <p class="text-lg md:text-xl opacity-90 leading-relaxed">
+                Tu marca es mucho más que un logo. Es la promesa que haces a tus clientes. Construimos la identidad visual de tu marca para que sea coherente, profesional y memorable en cada punto de contacto.
+            </p>
+        </div>
+    </section>
+
+    <main class="py-12 md:py-16">
+        <div class="container mx-auto px-4 md:px-8">
+            <section class="py-8">
+                <div class="max-w-3xl mx-auto text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">¿Por qué el branding es la base del éxito?</h2>
+                    <p class="text-xl text-gray-600">Una marca bien definida no solo te diferencia, sino que crea una conexión emocional con tu público.</p>
+                </div>
+                <div class="prose prose-lg mx-auto text-gray-700">
+                    <p>El branding es el alma de tu negocio. Una identidad visual fuerte y consistente genera reconocimiento, confianza y lealtad. En Pixel Pro, trabajamos contigo para definir el propósito y los valores de tu marca, y luego los traducimos en un sistema visual poderoso y cohesivo.</p>
+                </div>
+            </section>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
+                <Feature
+                    icon="fas fa-lightbulb"
+                    title="Estrategia de Marca"
+                    description="Definimos la esencia, los valores y el tono de tu marca para construir una base sólida y auténtica."
+                />
+                <Feature
+                    icon="fas fa-id-badge"
+                    title="Manual de Identidad Visual"
+                    description="Creamos un manual completo que incluye tu logo, paleta de colores, tipografía y pautas de uso para garantizar la coherencia."
+                />
+                <Feature
+                    icon="fas fa-vector-square"
+                    title="Elementos de Marca"
+                    description="Diseñamos todos los elementos necesarios, desde papelería corporativa hasta iconos y patrones gráficos."
+                />
+            </div>
+
+            <section class="py-8">
+                <div class="max-w-3xl mx-auto text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nuestro proceso para construir tu marca</h2>
+                    <p class="text-xl text-gray-600">Un enfoque estructurado para crear una identidad visual poderosa.</p>
+                </div>
+                <div class="prose prose-lg mx-auto text-gray-700">
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
+                        <li><strong>Sesión de Descubrimiento:</strong> Entendemos a fondo tu negocio, tu audiencia y tu competencia.</li>
+                        <li><strong>Conceptualización:</strong> Generamos ideas y propuestas de diseño que reflejan la personalidad de tu marca.</li>
+                        <li><strong>Implementación:</strong> Desarrollamos el manual de marca y todos los elementos visuales necesarios.</li>
+                        <li><strong>Lanzamiento:</strong> Te preparamos para que tu nueva identidad visual sea un éxito.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+</Layout>

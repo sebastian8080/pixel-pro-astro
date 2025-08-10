@@ -20,10 +20,15 @@ const iconColorClass = isDarkBackground ? 'text-blue-400' : 'text-blue-600';
 // La clase de borde sigue siendo útil para la diferenciación visual
 const borderColorClass = service.borderColor || 'border-blue-700'; // Fallback a un azul si no hay borde definido
 ---
-<div class={`relative p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 border-t-4 ${borderColorClass} ${cardBgClass} flex flex-col items-center text-center h-full`}>
-    <div class="mb-4">
-        {service.iconClass && <i class={`${service.iconClass} text-5xl ${iconColorClass}`}></i>}
-    </div>
-    <h3 class={`text-2xl font-semibold mb-3 ${titleColorClass}`}>{service.title}</h3>
-    <p class={`text-base ${descriptionColorClass} flex-grow`}>{service.description}</p>
+
+<div>
+    <a href=`/servicios/${service.url}`>
+        <div class={`relative p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 border-t-4 ${borderColorClass} ${cardBgClass} flex flex-col items-center text-center h-full`}>
+            <div class="mb-4">
+                {service.iconClass && <i class={`${service.iconClass} text-5xl ${iconColorClass}`}></i>}
+            </div>
+            <h3 class={`text-2xl font-semibold mb-3 ${titleColorClass}`}>{service.title}</h3>
+            <p class={`text-base ${descriptionColorClass} flex-grow`}>{service.description}</p>
+        </div>
+    </a>
 </div>

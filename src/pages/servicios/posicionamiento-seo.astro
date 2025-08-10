@@ -1,0 +1,69 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Feature from '../../components/services/Feature.astro';
+
+const pageTitle = "Posicionamiento SEO | Agencia de SEO | Pixel Pro";
+const pageDescription = "Mejora tu visibilidad en Google y atrae tráfico orgánico de calidad. Ofrecemos estrategias de SEO On-Page y Off-Page para que tu negocio aparezca en las primeras posiciones.";
+const pageUrl = Astro.url.href;
+---
+
+<Layout
+    title={pageTitle}
+    description={pageDescription}
+    canonical={pageUrl}
+>
+    <section class="bg-blue-700 text-white py-16 md:py-24 mt-16 md:mt-18">
+        <div class="container mx-auto px-4 md:px-8 text-center max-w-4xl">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">Posicionamiento SEO</h1>
+            <p class="text-lg md:text-xl opacity-90 leading-relaxed">
+                Atrae más clientes a tu sitio web sin pagar por anuncios. Con una estrategia de SEO sólida, tu negocio se posicionará de forma orgánica en los primeros resultados de Google.
+            </p>
+        </div>
+    </section>
+
+    <main class="py-12 md:py-16">
+        <div class="container mx-auto px-4 md:px-8">
+            <section class="py-8">
+                <div class="max-w-3xl mx-auto text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">¿Por qué es fundamental el SEO para tu negocio?</h2>
+                    <p class="text-xl text-gray-600">El 90% de los usuarios no pasan de la primera página de Google. El SEO es la clave para estar allí cuando te buscan.</p>
+                </div>
+                <div class="prose prose-lg mx-auto text-gray-700">
+                    <p>Una buena estrategia de SEO te brinda visibilidad a largo plazo, credibilidad y un flujo constante de tráfico cualificado. En Pixel Pro, trabajamos en la optimización técnica, de contenido y de autoridad de tu sitio para que ganes posiciones de forma sostenible y te conviertas en un referente en tu industria.</p>
+                </div>
+            </section>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
+                <Feature
+                    icon="fas fa-search"
+                    title="Auditoría y Estrategia SEO"
+                    description="Analizamos el estado actual de tu sitio, identificamos oportunidades y desarrollamos un plan de acción personalizado para tu negocio."
+                />
+                <Feature
+                    icon="fas fa-file-alt"
+                    title="SEO On-Page y Contenido"
+                    description="Optimizamos la estructura de tu sitio, las palabras clave, los títulos y las meta descripciones para mejorar su relevancia."
+                />
+                <Feature
+                    icon="fas fa-link"
+                    title="Link Building (SEO Off-Page)"
+                    description="Construimos una red de enlaces de calidad que aumentan la autoridad de tu dominio y mejoran tu posicionamiento en los buscadores."
+                />
+            </div>
+
+            <section class="py-8">
+                <div class="max-w-3xl mx-auto text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nuestros servicios de SEO incluyen</h2>
+                    <p class="text-xl text-gray-600">Un enfoque integral para dominar tu nicho de mercado en línea.</p>
+                </div>
+                <div class="prose prose-lg mx-auto text-gray-700">
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
+                        <li><strong>Investigación de Palabras Clave:</strong> Encontramos las mejores oportunidades de búsqueda para tu negocio.</li>
+                        <li><strong>SEO Técnico:</strong> Nos aseguramos de que tu sitio sea rastreable y amigable para los motores de búsqueda.</li>
+                        <li><strong>Creación de Contenido SEO:</strong> Generamos contenido de valor que atrae tráfico orgánico y responde a las preguntas de tu audiencia.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+</Layout>

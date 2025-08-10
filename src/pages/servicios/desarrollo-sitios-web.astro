@@ -1,0 +1,70 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Feature from '../../components/services/Feature.astro';
+
+const pageTitle = "Desarrollo de Sitios Web | Pixel Pro";
+const pageDescription = "Creamos sitios web modernos, rápidos y optimizados para SEO. Diseños personalizados, experiencias de usuario intuitivas y desarrollo robusto para impulsar tu presencia online.";
+const pageUrl = Astro.url.href;
+---
+
+<Layout
+    title={pageTitle}
+    description={pageDescription}
+    canonical={pageUrl}
+>
+    <section class="bg-blue-700 text-white py-16 md:py-24 mt-16 md:mt-18">
+        <div class="container mx-auto px-4 md:px-8 text-center max-w-4xl">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">Desarrollo de Sitios Web</h1>
+            <p class="text-lg md:text-xl opacity-90 leading-relaxed">
+                Tu sitio web es el corazón de tu presencia digital. Construimos plataformas rápidas, seguras y atractivas que no solo se ven bien, sino que generan resultados para tu negocio.
+            </p>
+        </div>
+    </section>
+
+    <main class="py-12 md:py-16">
+        <div class="container mx-auto px-4 md:px-8">
+            <section class="py-8">
+                <div class="max-w-3xl mx-auto text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">¿Por qué necesitas un sitio web profesional?</h2>
+                    <p class="text-xl text-gray-600">Un sitio web no es solo una tarjeta de presentación, es una herramienta de ventas, atención al cliente y credibilidad.</p>
+                </div>
+                <div class="prose prose-lg mx-auto text-gray-700">
+                    <p>Un sitio web bien diseñado y funcional es esencial para cualquier negocio moderno. En Pixel Pro, nos enfocamos en la velocidad, la usabilidad y la optimización para buscadores (SEO) desde el primer momento, garantizando que tu sitio sea una inversión inteligente y no solo un gasto.</p>
+                </div>
+            </section>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
+                <Feature
+                    icon="fas fa-paint-brush"
+                    title="Diseño Personalizado"
+                    description="Creamos un diseño único que refleja la identidad de tu marca y ofrece una experiencia de usuario (UX) excepcional."
+                />
+                <Feature
+                    icon="fas fa-mobile-alt"
+                    title="Responsivo y Móvil-First"
+                    description="Tu sitio web se verá y funcionará perfectamente en cualquier dispositivo, desde computadoras de escritorio hasta smartphones."
+                />
+                <Feature
+                    icon="fas fa-tachometer-alt"
+                    title="Optimización de Velocidad"
+                    description="Construimos sitios web ligeros y rápidos, mejorando la experiencia del usuario y tu posicionamiento en Google."
+                />
+            </div>
+
+            <section class="py-8">
+                <div class="max-w-3xl mx-auto text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nuestro proceso de desarrollo</h2>
+                    <p class="text-xl text-gray-600">Un enfoque colaborativo para entregar un producto de alta calidad.</p>
+                </div>
+                <div class="prose prose-lg mx-auto text-gray-700">
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
+                        <li><strong>Planificación y Estrategia:</strong> Definimos los objetivos y la estructura de tu sitio.</li>
+                        <li><strong>Diseño y Prototipado:</strong> Creación de maquetas visuales para tu aprobación.</li>
+                        <li><strong>Desarrollo y Testing:</strong> Codificamos tu sitio con las últimas tecnologías y lo probamos exhaustivamente.</li>
+                        <li><strong>Lanzamiento y Mantenimiento:</strong> Ponemos tu sitio en línea y te ofrecemos soporte para que siempre esté actualizado.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+</Layout>
