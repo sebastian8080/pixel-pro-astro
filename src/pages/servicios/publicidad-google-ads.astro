@@ -21,19 +21,24 @@ const pageUrl = Astro.url.href;
         </div>
     </section>
 
-    <main class="py-12 md:py-16">
-        <div class="container mx-auto px-4 md:px-8">
-            <section class="py-8">
-                <div class="max-w-3xl mx-auto text-center mb-8">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">¿Por qué es crucial la publicidad en Google?</h2>
-                    <p class="text-xl text-gray-600">Google es el motor de búsqueda más grande del mundo. Estar presente allí es sinónimo de oportunidades de venta.</p>
+        <div class="container mx-auto px-4 md:px-8 py-16 md:py-28 grid grid-cols-1 md:grid-cols-2 items-center">
+            <section>
+                <div class="max-w-3xl mx-auto mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-purple-600 mb-4">¿Por qué es crucial la publicidad en Google?</h2>
+                    <p class="text-md text-gray-600 mt-6">Google es el motor de búsqueda más grande del mundo. Estar presente allí es sinónimo de oportunidades de venta.</p>
                 </div>
-                <div class="prose prose-lg mx-auto text-gray-700">
+                <div class="prose prose-lg text-gray-700">
                     <p>Una campaña bien gestionada en Google Ads no solo te da visibilidad, sino que atrae a usuarios que ya están interesados en lo que ofreces. En Pixel Pro, optimizamos tus anuncios para que cada clic cuente y cada inversión se traduzca en resultados medibles.</p>
                 </div>
             </section>
+            <div class="mt-6">
+                <img class="rounded-md shadow-md scale-100 md:scale-75" src="/assets/img/servicio-de-publicidad-en-google-ads.webp" alt="Imagen de Servicio de Publicidad en Google Ads">
+            </div>
+        </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
+        <div class="bg-gray-200 py-16 md:py-24 px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-purple-600 mb-12 text-center">¿Qué incluye el servicio de publicidad en Google Ads?</h2>
+            <div class="container mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <Feature
                     icon="fas fa-search-dollar"
                     title="Investigación de Palabras Clave"
@@ -50,20 +55,27 @@ const pageUrl = Astro.url.href;
                     description="Monitoreamos el rendimiento de tus campañas, ajustando pujas y segmentación para maximizar tu retorno de inversión (ROI)."
                 />
             </div>
+        </div>
 
-            <section class="py-8">
-                <div class="max-w-3xl mx-auto text-center mb-8">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nuestro enfoque para campañas exitosas en Google Ads</h2>
+        <div class="container mx-auto px-4">
+            <section class="py-20 grid grid-cols-1 md:grid-cols-2 items-center">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-purple-600 mb-4">Nuestro enfoque para campañas exitosas en Google Ads</h2>
                     <p class="text-xl text-gray-600">Vamos más allá de las campañas básicas para obtener el máximo rendimiento.</p>
                 </div>
                 <div class="prose prose-lg mx-auto text-gray-700">
-                    <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
-                        <li><strong>Campañas de Búsqueda:</strong> Anuncios de texto que aparecen en los resultados de Google.</li>
-                        <li><strong>Campañas de Display:</strong> Banners visuales en millones de sitios web asociados.</li>
-                        <li><strong>Campañas de YouTube:</strong> Anuncios de video para captar la atención de tu audiencia.</li>
-                    </ul>
+    
+                    <h3><i class="fa-solid fa-circle-check text-purple-600"></i> Campañas de Búsqueda:</h3>
+                    <h4 class="font-light">Anuncios de texto que aparecen en los resultados de Google</h4>
+    
+                    <h3><i class="fa-solid fa-circle-check text-purple-600"></i> Campañas de Display:</h3>
+                    <h4 class="font-light">Banners visuales en millones de sitios web asociados.</h4>
+    
+                    <h3><i class="fa-solid fa-circle-check text-purple-600"></i> Campañas de YouTube:</h3>
+                    <h4 class="font-light">Anuncios de video para captar la atención de tu audiencia.</h4>
+    
                 </div>
             </section>
         </div>
-    </main>
+
 </Layout>
