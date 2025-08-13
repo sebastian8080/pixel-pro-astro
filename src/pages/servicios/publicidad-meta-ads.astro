@@ -21,49 +21,61 @@ const pageUrl = Astro.url.href;
         </div>
     </section>
 
-    <main class="py-12 md:py-16">
-        <div class="container mx-auto px-4 md:px-8">
-            <section class="py-8">
-                <div class="max-w-3xl mx-auto text-center mb-8">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">¿Por qué anunciarte en Facebook e Instagram?</h2>
-                    <p class="text-xl text-gray-600">Meta te ofrece una de las herramientas de segmentación más poderosas del mercado para llegar a tu cliente ideal.</p>
+        <div class="container mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 items-center py-10">
+            <section>
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-purple-600 mb-4">¿Por qué anunciarte en Facebook e Instagram?</h2>
+                    <p class="text-md text-gray-600">Meta te ofrece una de las herramientas de segmentación más poderosas del mercado para llegar a tu cliente ideal.</p>
                 </div>
-                <div class="prose prose-lg mx-auto text-gray-700">
+                <div class="mx-auto text-black mt-5 text-lg">
                     <p>A diferencia de la búsqueda activa en Google, Meta te permite crear la demanda al mostrar tus productos o servicios a personas con intereses y comportamientos específicos. En Pixel Pro, diseñamos estrategias creativas y segmentadas para que tus anuncios lleguen a las personas adecuadas, en el momento preciso.</p>
                 </div>
             </section>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
-                <Feature
-                    icon="fas fa-crosshairs"
-                    title="Segmentación de Audiencia"
-                    description="Identificamos a tu público ideal utilizando datos demográficos, intereses y comportamientos para asegurar el máximo impacto de tus anuncios."
-                />
-                <Feature
-                    icon="fas fa-images"
-                    title="Creación de Contenido Visual"
-                    description="Desarrollamos creatividades (imágenes, videos, carruseles) que no solo se ven bien, sino que están optimizadas para la conversión."
-                />
-                <Feature
-                    icon="fas fa-chart-bar"
-                    title="Análisis de Rendimiento"
-                    description="Evaluamos el desempeño de cada campaña, realizamos tests A/B y optimizamos el presupuesto para conseguir el mejor retorno posible."
-                />
+            <div class="mt-5 md:mt-0">
+                <img class="rounded-md shadow-md scale-100 md:scale-75" src="/assets/img/servicio-de-publicidad-en-meta-ads.webp" alt="Imagen de Servicio de Publicidad en Meta Ads">
             </div>
+        </div>
 
-            <section class="py-8">
-                <div class="max-w-3xl mx-auto text-center mb-8">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Estrategias avanzadas que utilizamos</h2>
-                    <p class="text-xl text-gray-600">Vamos más allá de lo básico para maximizar tu inversión en Meta Ads.</p>
+        <div class="bg-gray-200 py-14">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-purple-600 mb-4 text-center">¿Qué incluye el servicio de Meta Ads?</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
+                    <Feature
+                        icon="fas fa-crosshairs"
+                        title="Segmentación de Audiencia"
+                        description="Identificamos a tu público ideal utilizando datos demográficos, intereses y comportamientos para asegurar el máximo impacto de tus anuncios."
+                    />
+                    <Feature
+                        icon="fas fa-images"
+                        title="Creación de Contenido Visual"
+                        description="Desarrollamos creatividades (imágenes, videos, carruseles) que no solo se ven bien, sino que están optimizadas para la conversión."
+                    />
+                    <Feature
+                        icon="fas fa-chart-bar"
+                        title="Análisis de Rendimiento"
+                        description="Evaluamos el desempeño de cada campaña, realizamos tests A/B y optimizamos el presupuesto para conseguir el mejor retorno posible."
+                    />
                 </div>
-                <div class="prose prose-lg mx-auto text-gray-700">
-                    <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
-                        <li><strong>Campañas de Tráfico y Conversiones:</strong> Dirigimos a usuarios a tu sitio web para que realicen una acción.</li>
-                        <li><strong>Públicos Personalizados y Similares:</strong> Reimpactamos a clientes existentes y encontramos nuevos clientes con perfiles similares.</li>
-                        <li><strong>Campañas de Mensajes:</strong> Fomentamos la comunicación directa con clientes a través de Messenger o WhatsApp.</li>
-                    </ul>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4">
+            <section class="grid grid-cols-1 md:grid-cols-2 items-center py-12">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-purple-600 mb-4">Estrategias avanzadas que utilizamos</h2>
+                    <p class="text-md md:text-xl text-gray-600">Vamos más allá de lo básico para maximizar tu inversión en Meta Ads.</p>
+                </div>
+                <div class="prose prose-lg mx-auto text-gray-700 mt-4 md:mt-0">
+
+                    <h3><i class="fa-solid fa-circle-check text-purple-600"></i> Campañas de Tráfico y Conversiones:</h3>
+                    <h4 class="font-light">Dirigimos a usuarios a tu sitio web para que realicen una acción.</h4>
+
+                    <h3><i class="fa-solid fa-circle-check text-purple-600"></i> Públicos Personalizados y Similares:</h3>
+                    <h4 class="font-light">Reimpactamos a clientes existentes y encontramos nuevos clientes con perfiles similares.</h4>
+
+                    <h3><i class="fa-solid fa-circle-check text-purple-600"></i> Campañas de Mensajes:</h3>
+                    <h4 class="font-light">Fomentamos la comunicación directa con clientes a través de Messenger o WhatsApp.</h4>
                 </div>
             </section>
         </div>
-    </main>
 </Layout>
