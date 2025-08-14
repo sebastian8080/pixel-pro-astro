@@ -21,49 +21,62 @@ const pageUrl = Astro.url.href;
         </div>
     </section>
 
-    <main class="py-12 md:py-16">
-        <div class="container mx-auto px-4 md:px-8">
-            <section class="py-8">
-                <div class="max-w-3xl mx-auto text-center mb-8">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">¿Por qué es fundamental el SEO para tu negocio?</h2>
-                    <p class="text-xl text-gray-600">El 90% de los usuarios no pasan de la primera página de Google. El SEO es la clave para estar allí cuando te buscan.</p>
+        <div class="container mx-auto px-4 md:px-8 py-16 grid grid-cols-1 md:grid-cols-2 items-center">
+            <section>
+                <div class="max-w-3xl mx-auto mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-purple-600 mb-4">¿Por qué es fundamental el SEO para tu negocio?</h2>
+                    <p class="text-md text-gray-600">El 90% de los usuarios no pasan de la primera página de Google. El SEO es la clave para estar allí cuando te buscan.</p>
                 </div>
-                <div class="prose prose-lg mx-auto text-gray-700">
+                <div class="prose prose-lg text-gray-700">
                     <p>Una buena estrategia de SEO te brinda visibilidad a largo plazo, credibilidad y un flujo constante de tráfico cualificado. En Pixel Pro, trabajamos en la optimización técnica, de contenido y de autoridad de tu sitio para que ganes posiciones de forma sostenible y te conviertas en un referente en tu industria.</p>
                 </div>
             </section>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
-                <Feature
-                    icon="fas fa-search"
-                    title="Auditoría y Estrategia SEO"
-                    description="Analizamos el estado actual de tu sitio, identificamos oportunidades y desarrollamos un plan de acción personalizado para tu negocio."
-                />
-                <Feature
-                    icon="fas fa-file-alt"
-                    title="SEO On-Page y Contenido"
-                    description="Optimizamos la estructura de tu sitio, las palabras clave, los títulos y las meta descripciones para mejorar su relevancia."
-                />
-                <Feature
-                    icon="fas fa-link"
-                    title="Link Building (SEO Off-Page)"
-                    description="Construimos una red de enlaces de calidad que aumentan la autoridad de tu dominio y mejoran tu posicionamiento en los buscadores."
-                />
+            <div class="mt-10 md:mt-0">
+                <img class="rounded-md shadow-md scale-100 md:scale-75" src="/assets/img/servicio-de-posicionamiento-seo.webp" alt="Imagen de Servicio de Posicionamiento Seo">
             </div>
+        </div>
 
-            <section class="py-8">
+        <div class="bg-gray-200 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-purple-600 mb-4 text-center">¿Qué incluye el servicio de posicionamiento SEO?</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
+                    <Feature
+                        icon="fas fa-search"
+                        title="Auditoría y Estrategia SEO"
+                        description="Analizamos el estado actual de tu sitio, identificamos oportunidades y desarrollamos un plan de acción personalizado para tu negocio."
+                    />
+                    <Feature
+                        icon="fas fa-file-alt"
+                        title="SEO On-Page y Contenido"
+                        description="Optimizamos la estructura de tu sitio, las palabras clave, los títulos y las meta descripciones para mejorar su relevancia."
+                    />
+                    <Feature
+                        icon="fas fa-link"
+                        title="Link Building (SEO Off-Page)"
+                        description="Construimos una red de enlaces de calidad que aumentan la autoridad de tu dominio y mejoran tu posicionamiento en los buscadores."
+                    />
+                </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4">
+            <section class="py-20 grid grid-cols-1 md:grid-cols-2 items-center">
                 <div class="max-w-3xl mx-auto text-center mb-8">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nuestros servicios de SEO incluyen</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-purple-600 mb-4">Nuestros servicios de SEO incluyen</h2>
                     <p class="text-xl text-gray-600">Un enfoque integral para dominar tu nicho de mercado en línea.</p>
                 </div>
                 <div class="prose prose-lg mx-auto text-gray-700">
-                    <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
-                        <li><strong>Investigación de Palabras Clave:</strong> Encontramos las mejores oportunidades de búsqueda para tu negocio.</li>
-                        <li><strong>SEO Técnico:</strong> Nos aseguramos de que tu sitio sea rastreable y amigable para los motores de búsqueda.</li>
-                        <li><strong>Creación de Contenido SEO:</strong> Generamos contenido de valor que atrae tráfico orgánico y responde a las preguntas de tu audiencia.</li>
-                    </ul>
+
+                    <h3><i class="fa-solid fa-circle-check text-purple-600"></i> Investigación de Palabras Clave:</h3>
+                    <h4 class="font-light">Encontramos las mejores oportunidades de búsqueda para tu negocio.</h4>
+
+                    <h3><i class="fa-solid fa-circle-check text-purple-600"></i> SEO Técnico:</h3>
+                    <h4 class="font-light">Nos aseguramos de que tu sitio sea rastreable y amigable para los motores de búsqueda.</h4>
+
+                    <h3><i class="fa-solid fa-circle-check text-purple-600"></i> Creación de Contenido SEO:</h3>
+                    <h4 class="font-light">Generamos contenido de valor que atrae tráfico orgánico y responde a las preguntas de tu audiencia.</h4>
+
                 </div>
             </section>
         </div>
-    </main>
 </Layout>
