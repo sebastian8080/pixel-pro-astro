@@ -21,50 +21,66 @@ const pageUrl = Astro.url.href;
         </div>
     </section>
 
-    <main class="py-12 md:py-16">
-        <div class="container mx-auto px-4 md:px-8">
-            <section class="py-8">
-                <div class="max-w-3xl mx-auto text-center mb-8">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">¿Por qué necesitas un sitio web profesional?</h2>
-                    <p class="text-xl text-gray-600">Un sitio web no es solo una tarjeta de presentación, es una herramienta de ventas, atención al cliente y credibilidad.</p>
+        <div class="container mx-auto px-4 md:px-8 py-16 grid grid-cols-1 md:grid-cols-2 items-center">
+            <section>
+                <div class="max-w-3xl mx-auto mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-purple-600 mb-4">¿Por qué necesitas un sitio web profesional?</h2>
+                    <p class="text-md text-gray-600">Un sitio web no es solo una tarjeta de presentación, es una herramienta de ventas, atención al cliente y credibilidad.</p>
                 </div>
-                <div class="prose prose-lg mx-auto text-gray-700">
+                <div class="prose prose-lg text-gray-700">
                     <p>Un sitio web bien diseñado y funcional es esencial para cualquier negocio moderno. En Pixel Pro, nos enfocamos en la velocidad, la usabilidad y la optimización para buscadores (SEO) desde el primer momento, garantizando que tu sitio sea una inversión inteligente y no solo un gasto.</p>
                 </div>
             </section>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
-                <Feature
-                    icon="fas fa-paint-brush"
-                    title="Diseño Personalizado"
-                    description="Creamos un diseño único que refleja la identidad de tu marca y ofrece una experiencia de usuario (UX) excepcional."
-                />
-                <Feature
-                    icon="fas fa-mobile-alt"
-                    title="Responsivo y Móvil-First"
-                    description="Tu sitio web se verá y funcionará perfectamente en cualquier dispositivo, desde computadoras de escritorio hasta smartphones."
-                />
-                <Feature
-                    icon="fas fa-tachometer-alt"
-                    title="Optimización de Velocidad"
-                    description="Construimos sitios web ligeros y rápidos, mejorando la experiencia del usuario y tu posicionamiento en Google."
-                />
+            <div class="mt-10 md:mt-0">
+                <img class="rounded-md shadow-md scale-100 md:scale-75" src="/assets/img/servicio-desarrollo-de-sitios-web.webp" alt="Imagen de Servicio de Desarrollo de Sitios Web">
             </div>
+        </div>
 
-            <section class="py-8">
+        <div class="bg-gray-200 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-purple-600 mb-4 text-center">¿Qué incluye el servicio de desarrollo web?</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
+                    <Feature
+                        icon="fas fa-paint-brush"
+                        title="Diseño Personalizado"
+                        description="Creamos un diseño único que refleja la identidad de tu marca y ofrece una experiencia de usuario (UX) excepcional."
+                    />
+                    <Feature
+                        icon="fas fa-mobile-alt"
+                        title="Responsivo y Móvil-First"
+                        description="Tu sitio web se verá y funcionará perfectamente en cualquier dispositivo, desde computadoras de escritorio hasta smartphones."
+                    />
+                    <Feature
+                        icon="fas fa-tachometer-alt"
+                        title="Optimización de Velocidad"
+                        description="Construimos sitios web ligeros y rápidos, mejorando la experiencia del usuario y tu posicionamiento en Google."
+                    />
+                </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4">
+            <section class="py-20 grid grid-cols-1 md:grid-cols-2 items-center">
                 <div class="max-w-3xl mx-auto text-center mb-8">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nuestro proceso de desarrollo</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-purple-600 mb-4">Nuestro proceso de desarrollo</h2>
                     <p class="text-xl text-gray-600">Un enfoque colaborativo para entregar un producto de alta calidad.</p>
                 </div>
                 <div class="prose prose-lg mx-auto text-gray-700">
-                    <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
-                        <li><strong>Planificación y Estrategia:</strong> Definimos los objetivos y la estructura de tu sitio.</li>
-                        <li><strong>Diseño y Prototipado:</strong> Creación de maquetas visuales para tu aprobación.</li>
-                        <li><strong>Desarrollo y Testing:</strong> Codificamos tu sitio con las últimas tecnologías y lo probamos exhaustivamente.</li>
-                        <li><strong>Lanzamiento y Mantenimiento:</strong> Ponemos tu sitio en línea y te ofrecemos soporte para que siempre esté actualizado.</li>
-                    </ul>
+                    
+                    <h3><i class="fa-solid fa-circle-check text-purple-600"></i> Planificación y Estrategia:</h3>
+                    <h4 class="font-light">Definimos los objetivos y la estructura de tu sitio.</h4>
+
+                    <h3><i class="fa-solid fa-circle-check text-purple-600"></i> Diseño y Prototipado:</h3>
+                    <h4 class="font-light">Creación de maquetas visuales para tu aprobación.</h4>
+
+                    <h3><i class="fa-solid fa-circle-check text-purple-600"></i> Desarrollo y Testing:</h3>
+                    <h4 class="font-light">Codificamos tu sitio con las últimas tecnologías y lo probamos exhaustivamente.</h4>
+
+                    <h3><i class="fa-solid fa-circle-check text-purple-600"></i> Lanzamiento y Mantenimiento:</h3>
+                    <h4 class="font-light">Ponemos tu sitio en línea y te ofrecemos soporte para que siempre esté actualizado.</h4>
+
                 </div>
             </section>
         </div>
-    </main>
 </Layout>
