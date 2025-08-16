@@ -2,7 +2,7 @@
 // src/components/contact/ContactForm.astro
 ---
 <div class="bg-white p-8 rounded-lg shadow-lg">
-    <h2 class="text-3xl font-semibold text-purple-700 mb-6">Envíanos un Mensaje</h2>
+    <h2 class="text-3xl font-semibold text-blue-900 mb-6">Envíanos un Mensaje</h2>
     <form id="contactForm" method="POST" class="space-y-6"> {/* Añade un ID al formulario */}
         <div>
             <label for="nombre" class="block text-gray-700 text-sm font-bold mb-2">Nombre:</label>
@@ -24,11 +24,15 @@
             <label for="servicio" class="block text-gray-700 text-sm font-bold mb-2">Servicio de Interés:</label>
             <select id="servicio" name="servicio" class="shadow border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <option value="">Selecciona un Servicio</option>
-                <option value="Google Ads">Google Ads</option>
+                <option value="Gestión de redes sociales">Gestión de redes sociales</option>
+                <option value="Publicidad en Google Ads">Publicidad en Google Ads</option>
+                <option value="Publicidad en Meta (Facebook e Instagram)">Publicidad en Meta (Facebook e Instagram)</option>
+                <option value="Desarrollo de Sitios Web">Desarrollo de Sitios Web</option>
                 <option value="Posicionamiento SEO">Posicionamiento SEO</option>
-                <option value="Desarrollo Web">Desarrollo Web</option>
-                <option value="Diseño Web">Diseño Web</option>
-                <option value="Otros Servicios">Otros Servicios</option>
+                <option value="Diseño Gráfico">Diseño Gráfico</option>
+                <option value="Branding e Identidad Visual">Branding e Identidad Visual</option>
+                <option value="Consultoría en Marketing Digital">Consultoría en Marketing Digital</option>
+                <option value="Otro Servicio">Otro Servicio</option>
             </select>
         </div>
         <div>
@@ -39,7 +43,7 @@
         {/* Mensaje de estado del formulario */}
         <p id="formStatusMessage" class="text-center font-bold" style="display: none;"></p>
 
-        <button type="submit" id="submitButton" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline transition duration-300 ease-in-out">
+        <button type="submit" id="submitButton" class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline transition duration-300 ease-in-out">
             Enviar Mensaje
         </button>
     </form>
