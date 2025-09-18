@@ -46,7 +46,7 @@ La **intención de búsqueda** junto con las **palabras clave correctas** es la 
 
 ## ⚙️ 2. Optimización SEO On-Page
 
-Para aumentar tráfico en página web es muy importante optimizar tu sitio para que Google y tus usuarios lo amen. Esta es otra forma que utilizo para aumentar el tráfico a mi página web.
+Para aumentar tráfico en página web es muy importante optimizar tu sitio para que Google y tus usuarios lo amen. Esta es otra forma que utilizo para aumentar el tráfico de mi página web.
 
 ### 🗂️ ¿Cómo optimizar el SEO On-Page en mi sitio?
 
