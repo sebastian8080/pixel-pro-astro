@@ -1,31 +1,52 @@
 ---
 // components/blog/RecentPosts.astro
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
-const allPosts = await getCollection('posts');
+const allPosts = await getCollection("posts");
 const recentPosts = allPosts
-  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
-  .slice(0, 4);
+  .sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+  )
+  .slice(0, 3); // Cambiado de 4 a 3
 ---
 
 <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm my-8">
   <h3 class="text-xl font-bold text-gray-800 mb-4">Artículos Recientes</h3>
   <div class="space-y-4">
-    {recentPosts.map((post) => (
-      <article class="border-b border-gray-100 last:border-b-0 pb-4 last:pb-0">
-        <a href={`/blog/${post.slug}`} class="block hover:bg-gray-50 p-2 rounded -m-2 transition-colors">
-          <h4 class="font-medium text-gray-800 hover:text-blue-600 line-clamp-2 mb-1">
-            {post.data.title}
-          </h4>
-          <p class="text-sm text-gray-600 line-clamp-2 mb-2">
-            {post.data.description}
-          </p>
-          <div class="flex items-center justify-between text-xs text-gray-500">
-            <span>{new Date(post.data.date).toLocaleDateString('es-ES')}</span>
-            <span class="text-blue-600 font-medium">Leer más →</span>
-          </div>
-        </a>
-      </article>
-    ))}
+    {
+      recentPosts.map((post) => (
+        <article class="border-b border-gray-100 last:border-b-0 pb-4 last:pb-0">
+          <a
+            href={`/blog/${post.slug}`}
+            class="block hover:bg-gray-50 p-2 rounded -m-2 transition-colors"
+          >
+            <h4 class="font-medium text-gray-800 hover:text-blue-600 line-clamp-2 mb-1">
+              {post.data.title}
+            </h4>
+            <p class="text-sm text-gray-600 line-clamp-2 mb-2">
+              {post.data.description}
+            </p>
+            <div class="flex items-center justify-between text-xs text-gray-500">
+              <span>
+                {new Date(post.data.date).toLocaleDateString("es-ES")}
+              </span>
+              <span class="text-blue-600 font-medium">Leer más →</span>
+            </div>
+          </a>
+        </article>
+      ))
+    }
+  </div>
+
+  <!-- Botón para ver todos los artículos -->
+  <div class="mt-6 pt-4 border-t border-gray-100">
+    <a
+      href="/blog"
+      class="block w-full text-center bg-blue-600 hover:bg-blue-700
+    text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200
+    shadow-sm hover:shadow-md"
+    >
+      Ver Todos los Artículos</a
+    >
   </div>
 </div>

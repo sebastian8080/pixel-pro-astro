@@ -1,13 +1,14 @@
 ---
-import { getCollection, getEntry } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
-import CallToAction from '../../components/blog/CallToAction.astro';
-import OurServices from '../../components/blog/OurServices.astro';
-import RecentPosts from '../../components/blog/RecentPosts.astro';
-import SocialShare from '../../components/blog/SocialShare.astro';
+import { getCollection, getEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import CallToAction from "../../components/blog/CallToAction.astro";
+import OurServices from "../../components/blog/OurServices.astro";
+import RecentPosts from "../../components/blog/RecentPosts.astro";
+import SocialShare from "../../components/blog/SocialShare.astro";
+import AuthorCard from "../../components/blog/AuthorCard.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection('posts');
+  const posts = await getCollection("posts");
   return posts.map((post) => ({
     params: { slug: post.slug },
     props: { post },
@@ -15,9 +16,9 @@ export async function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
-const post = await getEntry('posts', slug);
+const post = await getEntry("posts", slug);
 if (!post) {
-  return new Response('No encontrado', { status: 404 });
+  return new Response("No encontrado", { status: 404 });
 }
 const { Content } = await post.render();
 
@@ -28,38 +29,50 @@ const currentUrl = `${Astro.site}blog/${slug}`;
 <Layout title={post.data.title} description={post.data.description}>
   <div class="container mx-auto py-12 px-4 max-w-7xl mt-20">
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-      
       <!-- Contenido principal del artículo -->
       <div class="lg:col-span-3">
         <article class="bg-white rounded-lg shadow-sm">
-
           <div>
-            <img class="h-44 md:h-96 w-full object-cover" src={post.data.image} alt={post.data.title}>
+            <img
+              class="h-44 md:h-96 w-full object-cover"
+              src={post.data.image}
+              alt={post.data.title}
+            />
           </div>
 
           <header class="mb-8 md:p-6 pb-0">
-            <p class="text-lg text-gray-600 mb-6 bg-gray-100 py-2 px-4 rounded-lg inline-block">
-              Publicado el <strong> {new Date(post.data.date).toLocaleDateString('es-ES', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })} </strong> por <strong>{post.data.author}</strong>
+            <p
+              class="text-lg text-gray-600 mb-6 bg-gray-100 py-2 px-4 rounded-lg inline-block"
+            >
+              Publicado el <strong>
+                {
+                  new Date(post.data.date).toLocaleDateString("es-ES", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })
+                }
+              </strong> por <strong>{post.data.author}</strong>
             </p>
           </header>
-          
+
           <!-- Contenido con prose básico -->
-          <div class="prose prose-lg prose-gray max-w-none px-6 prose-headings:text-2xl md:prose-headings:text-3xl prose-h1:text-2xl md:prose-h1:text-4xl lg:prose-h1:text-5xl prose-h3:text-xl md:prose-h3:text-xl prose-h4:text-lg md:prose-h4:text-lg md:prose-h4:font-normal prose-h2:font-bold">
+          <div
+            class="prose prose-lg prose-gray max-w-none px-6 prose-headings:text-2xl md:prose-headings:text-3xl prose-h1:text-2xl md:prose-h1:text-4xl lg:prose-h1:text-5xl prose-h3:text-xl md:prose-h3:text-xl prose-h4:text-lg md:prose-h4:text-lg md:prose-h4:font-normal prose-h2:font-bold"
+          >
             <Content />
           </div>
-          
+
           <footer class="mt-8 pt-6 border-t border-gray-200 px-6 pb-6">
             <div class="flex flex-wrap gap-2">
               <span class="text-gray-600 font-medium mr-2">Tags:</span>
-              {post.data.tags.map((tag) => (
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                  #{tag}
-                </span>
-              ))}
+              {
+                post.data.tags.map((tag) => (
+                  <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+                    #{tag}
+                  </span>
+                ))
+              }
             </div>
           </footer>
         </article>
@@ -68,23 +81,25 @@ const currentUrl = `${Astro.site}blog/${slug}`;
         <div>
           <SocialShare title={post.data.title} url={currentUrl} />
         </div>
-        
+
+        <div class="mt-8">
+          <AuthorCard />
+        </div>
+
         <!-- Call to Action -->
         <CallToAction />
       </div>
-      
+
       <!-- Sidebar -->
       <div class="lg:col-span-1">
-        <div class="sticky top-16 space-y-6 max-h-screen overflow-y-auto">
+        <div class="sticky top-28 space-y-6">
           <!-- Artículos recientes -->
           <RecentPosts />
-          
+
           <!-- Nuestros servicios -->
           <OurServices />
-
         </div>
       </div>
-
     </div>
   </div>
 </Layout>
